@@ -13,7 +13,7 @@ interface PageHeaderProps {
 export function PageHeader({ section, href = "/", variant = "main" }: PageHeaderProps) {
   const { t } = useT();
   return (
-    <header className="flex items-center justify-between py-6 border-b hairline">
+    <header className="sticky top-0 z-30 bg-paper border-b hairline flex items-center justify-between py-6">
       <Link href="/" className="flex items-baseline gap-2">
         <span className="font-display text-2xl tracking-tight">Zenith</span>
         <span className="text-[10px] uppercase tracking-[0.3em] text-mute">

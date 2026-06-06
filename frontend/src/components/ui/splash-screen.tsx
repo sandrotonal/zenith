@@ -88,7 +88,15 @@ export function SplashScreen() {
         <span className="font-mono-zn tabular-nums">{clock}</span>
       </div>
 
-      <div className="flex-1 flex flex-col items-center justify-center px-5 sm:px-8">
+      <div className="flex-1 flex flex-col items-center justify-center px-5 sm:px-8 gap-6 md:gap-10">
+        <img
+          src="/zenith.png"
+          alt="Zenith"
+          width={140}
+          height={140}
+          className="splash-title w-24 sm:w-28 md:w-32 lg:w-[140px] h-auto select-none pointer-events-none"
+          draggable={false}
+        />
         <h1
           className="splash-title font-display text-[clamp(3.75rem,17vw,15rem)] leading-[0.85] text-center"
           aria-label="Zenith"

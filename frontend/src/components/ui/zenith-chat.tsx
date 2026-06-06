@@ -148,11 +148,23 @@ export default function ZenithChat() {
   return (
     <div className="relative min-h-screen w-full bg-paper text-ink">
       <div className="mx-auto w-full max-w-[1400px] px-6 md:px-10 lg:px-14">
-        <header className="sticky top-0 z-30 bg-paper border-b hairline flex items-center justify-between py-6">
-          <Link href="/" className="flex items-baseline gap-2">
-            <span className="font-display text-2xl tracking-tight">Zenith</span>
-            <span className="text-[10px] uppercase tracking-[0.3em] text-mute">
-              / ˈzē-nəth
+        <header className="sticky top-0 z-30 bg-paper border-b hairline flex items-center justify-between gap-3 py-3.5 md:py-6">
+          <Link href="/" className="flex items-center gap-2.5 md:gap-3 min-w-0">
+            <img
+              src="/zenith.png"
+              alt="Zenith"
+              width={36}
+              height={36}
+              className="w-7 h-7 md:w-9 md:h-9 shrink-0 select-none pointer-events-none"
+              draggable={false}
+            />
+            <span className="flex items-baseline gap-2 min-w-0">
+              <span className="font-display text-xl md:text-2xl tracking-tight whitespace-nowrap">
+                Zenith
+              </span>
+              <span className="hidden sm:inline text-[10px] uppercase tracking-[0.3em] text-mute whitespace-nowrap">
+                / ˈzē-nəth
+              </span>
             </span>
           </Link>
 

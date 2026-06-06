@@ -104,3 +104,44 @@ body {
 .fade-up {
   animation: fadeUp 0.6s cubic-bezier(0.2, 0.6, 0.2, 1) both;
 }
+
+@keyframes splashTitle {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+    letter-spacing: -0.12em;
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+    letter-spacing: -0.045em;
+  }
+}
+
+.splash-title {
+  animation: splashTitle 1.2s cubic-bezier(0.2, 0.6, 0.2, 1) both;
+}
+
+.splash-line {
+  animation: fadeUp 0.8s cubic-bezier(0.2, 0.6, 0.2, 1) both;
+  animation-delay: 0.25s;
+  opacity: 0;
+}
+
+.splash-meta {
+  animation: fadeUp 0.6s cubic-bezier(0.2, 0.6, 0.2, 1) both;
+  animation-delay: 0.5s;
+  opacity: 0;
+}
+
+@keyframes cursorBlink {
+  50% {
+    opacity: 0;
+  }
+}
+
+.splash-cursor {
+  display: inline-block;
+  animation: cursorBlink 1s steps(1) infinite;
+  color: var(--accent);
+}

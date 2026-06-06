@@ -248,6 +248,14 @@ const dict = {
         },
       ],
     },
+    cookies: {
+      label: "Cookies",
+      title: "Privacy notice",
+      body: "Zenith stores minimal data in your browser only — language, theme, and recent translations. No tracking, no analytics, no third parties.",
+      policyLink: "Privacy policy",
+      decline: "Decline",
+      accept: "Accept",
+    },
   },
   tr: {
     settings: {
@@ -485,6 +493,14 @@ const dict = {
           href: "https://github.com/sandrotonal",
         },
       ],
+    },
+    cookies: {
+      label: "Çerezler",
+      title: "Gizlilik bildirimi",
+      body: "Zenith yalnızca tarayıcında asgari veri saklar — dil, tema ve son çeviriler. İzleme yok, analitik yok, üçüncü taraf yok.",
+      policyLink: "Gizlilik politikası",
+      decline: "Reddet",
+      accept: "Kabul et",
     },
   },
 } as const;

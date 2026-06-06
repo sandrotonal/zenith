@@ -1,19 +1,106 @@
 @import "tailwindcss";
 
 :root {
-  --background: #050505;
-  --foreground: #ffffff;
+  --bg: #0a0a0a;
+  --fg: #f5f2ec;
+  --rule: #1f1d1a;
+  --mute: #6b6862;
+  --accent: #c2410c;
+  --selection-bg: #f5f2ec;
+  --selection-fg: #0a0a0a;
+}
+
+[data-theme="light"] {
+  --bg: #f5f2ec;
+  --fg: #0a0a0a;
+  --rule: #d9d4ca;
+  --mute: #6b6862;
+  --accent: #c2410c;
+  --selection-bg: #0a0a0a;
+  --selection-fg: #f5f2ec;
+}
+
+@theme inline {
+  --color-paper: var(--bg);
+  --color-ink: var(--fg);
+  --color-rule: var(--rule);
+  --color-mute: var(--mute);
+  --color-accent: var(--accent);
+}
+
+html,
+body {
+  background-color: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 body {
-  background-color: var(--background);
-  color: var(--foreground);
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
 }
 
-@layer base {
-  * {
-    @apply border-white/10;
+::selection {
+  background-color: var(--selection-bg);
+  color: var(--selection-fg);
+}
+
+.font-display {
+  font-family: var(--font-display), Georgia, serif;
+  font-feature-settings: "ss01", "ss02";
+  letter-spacing: -0.04em;
+  line-height: 0.85;
+}
+
+.font-mono-zn {
+  font-family: var(--font-geist-mono), "JetBrains Mono", monospace;
+  letter-spacing: -0.02em;
+}
+
+.hairline {
+  border-color: var(--rule);
+}
+
+.text-mute {
+  color: var(--mute);
+}
+
+.bg-paper {
+  background-color: var(--bg);
+}
+
+.text-ink {
+  color: var(--fg);
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
   }
+}
+
+.cursor-blink::after {
+  content: "▍";
+  margin-left: 0.05em;
+  animation: blink 1s steps(1) infinite;
+  color: var(--accent);
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-up {
+  animation: fadeUp 0.6s cubic-bezier(0.2, 0.6, 0.2, 1) both;
 }

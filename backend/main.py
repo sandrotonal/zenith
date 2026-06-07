@@ -13,13 +13,15 @@ origins = [
     "http://localhost:3000/",
 ]
 
+# CORS ayarları (Canlıda kesin çözüm için tüm dünyaya açıyoruz)
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=origins,
-    allow_credentials=True,
+    allow_origins=["*"],       # Tüm domainlerden gelen isteklere izin ver
+    allow_credentials=False,   # Katı tarayıcı ön kontrol kilidini kırmak için False yapıyoruz
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
 
 engine = ZenithNLPEngine()
 

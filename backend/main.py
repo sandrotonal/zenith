@@ -6,9 +6,14 @@ from engine import ZenithNLPEngine
 app = FastAPI(title="Zenith NLP API", version="1.0.0")
 
 # CORS ayarları (Frontend ile iletişim için)
+origins = [
+    "https://zen1th.vercel.app",
+    "http://localhost:3000",
+]
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"], # Geliştirme aşamasında her şeye izin ver
+    allow_origins=origins,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],

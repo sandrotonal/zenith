@@ -9,7 +9,7 @@ import { cn } from "@/lib/utils";
 import { useT } from "@/lib/i18n";
 import { ArrowUp, ArrowUpRight, Check, Copy, Menu, X } from "lucide-react";
 
-const API_BASE_URL = "http://localhost:8000";
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || "https://zen1th.up.railway.app";
 
 type Mode = "tr-zn" | "zn-tr";
 type Tense = "present" | "past" | "future";

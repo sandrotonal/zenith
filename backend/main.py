@@ -57,4 +57,7 @@ async def generate_word(request: WordGenerationRequest):
 
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run(app, host="0.0.0.0", port=8000)
+    import os
+    # Railway hangi portu verirse dinamik olarak onu almasını sağlıyoruz
+    port = int(os.environ.get("PORT", 8080))
+    uvicorn.run(app, host="0.0.0.0", port=port)

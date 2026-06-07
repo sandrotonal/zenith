@@ -8,7 +8,9 @@ app = FastAPI(title="Zenith NLP API", version="1.0.0")
 # CORS ayarları (Frontend ile iletişim için)
 origins = [
     "https://zen1th.vercel.app",
+    "https://zen1th.vercel.app/",  # Sonunda eğik çizgi olan versiyonu da ekliyoruz
     "http://localhost:3000",
+    "http://localhost:3000/",
 ]
 
 app.add_middleware(
